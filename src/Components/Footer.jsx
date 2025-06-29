@@ -1,84 +1,99 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react"
+import { Heart, ArrowUp } from "lucide-react"
+import { Link } from "react-router"
+import logo from "../assets/bg-logo.png"
+import { useEffect, useState } from "react"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const [showButton, setShowButton] = useState(false)
+
+  // Show button when user scrolls down
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowButton(window.scrollY > 300)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   return (
-    <footer className="bg-gray-800 border-t border-gray-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand Section */}
-          <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              <span className="text-pink-500">Rakhima</span> Khatun
-            </h3>
-            <p className="text-gray-400 mb-6 max-w-md">
-              Full Stack Developer passionate about creating innovative web solutions and turning ideas into reality
-              through clean, efficient code.
-            </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/Rahima097"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-pink-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
-              >
-                <Github size={20} />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/rahima-khatun28/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-pink-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href="mailto:rakhima.khatun.dev@gmail.com"
-                className="bg-gray-700 hover:bg-pink-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
-              >
-                <Mail size={20} />
-              </a>
+    <>
+      <footer className="bg-gray-800 border-t border-gray-700 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Brand Section */}
+            <div className="md:col-span-2">
+              <Link to="/" className="text-2xl font-bold text-white flex items-center gap-2">
+                <img
+                  src={logo || "/placeholder.svg"}
+                  alt="Rakhima Khatun Logo"
+                  className="w-14 h-14 object-contain"
+                />
+                <span className="text-pink-500">Rakhima</span> Khatun
+              </Link>
+              <p className="text-gray-400 mb-6 max-w-md">
+                Full Stack Developer passionate about creating innovative web solutions and turning ideas into reality
+                through clean, efficient code.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2">
+                {["About", "Skills", "Projects", "Contact"].map((item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="text-gray-400 hover:text-pink-500 transition-colors"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h4 className="text-white font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li>Full Stack Development</li>
+                <li>Frontend Development</li>
+                <li>MERN Stack Development</li>
+                <li>WordPress Development</li>
+              </ul>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {[ "About", "Skills", "Projects", "Contact"].map((item) => (
-                <li key={item}>
-                  <a href={`#${item.toLowerCase()}`} className="text-gray-400 hover:text-pink-500 transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>Full Stack Development</li>
-              <li>Frontend Development</li>
-              <li>MERN Stack Development</li>
-              <li>WordPress Development</li>
-            </ul>
+          {/* Bottom Section */}
+          <div className="border-t border-gray-700 mt-8 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-400 text-sm mb-4 md:mb-0">© {currentYear} Rakhima Khatun. All rights reserved.</p>
+              <p className="text-gray-400 text-sm flex items-center">
+                Made with <Heart size={16} className="text-pink-500 mx-1" /> and lots of ☕
+              </p>
+            </div>
           </div>
         </div>
+      </footer>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-700 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">© {currentYear} Rakhima Khatun. All rights reserved.</p>
-            <p className="text-gray-400 text-sm flex items-center">
-              Made with <Heart size={16} className="text-pink-500 mx-1" /> and lots of ☕
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
+      {/* Go to Top Button */}
+      {showButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full shadow-lg animate-bounce transition duration-300 z-50"
+          aria-label="Go to top"
+        >
+          <ArrowUp size={20} />
+        </button>
+      )}
+    </>
   )
 }
 

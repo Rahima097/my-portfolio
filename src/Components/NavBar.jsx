@@ -1,18 +1,19 @@
-import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, Download } from "lucide-react";
+import logo from "../assets/bg-logo.png";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -22,46 +23,77 @@ const Navbar = () => {
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
-  ]
+  ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href)
+    const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
+
+  const handleResumeDownload = () => {
+    try {
+      const link = document.createElement("a");
+      link.href = "/resume.pdf";
+      link.download = "Rahima_Khatun_Resume.pdf";
+      link.target = "_blank";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Resume download failed:", error);
+      window.open("/resume.pdf", "_blank");
+    }
+  };
 
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-gray-900/95 backdrop-blur-sm shadow-lg" : "bg-transparent"
+        scrolled ? "bg-gray-900/95 backdrop-blur-sm shadow-md" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-2xl font-bold text-white">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 text-white font-bold text-xl md:text-2xl">
+            <img
+              src={logo || "/placeholder.svg"}
+              alt="Rakhima Logo"
+              className="w-10 h-10 object-contain"
+            />
             <span className="text-pink-500">Rakhima</span> Khatun
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-300 hover:text-pink-500 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
+          {/* Desktop & Tablet Menu (≥768px) */}
+          <div className="hidden sm:flex space-x-4 md:space-x-6 items-center">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+                className="text-gray-300 hover:text-pink-500 transition-colors duration-200 text-sm md:text-base font-medium"
+              >
+                {item.name}
+              </button>
+            ))}
+            <button
+              onClick={handleResumeDownload}
+              className="bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-4 py-2 md:px-6 md:py-2 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25"
+              title="Download Resume"
+            >
+              <Download size={18} />
+              Resume
+            </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-300 hover:text-white p-2">
+          {/* Mobile Menu Toggle (only <768px) */}
+          <div className="sm:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-300 hover:text-white p-2"
+              aria-label="Toggle Menu"
+            >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -69,23 +101,28 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-800 rounded-lg mt-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-300 hover:text-pink-500 block px-3 py-2 rounded-md text-base font-medium w-full text-left transition-colors duration-200"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
+          <div className="sm:hidden transition-all duration-300 ease-in-out bg-gray-800 rounded-lg mt-2 px-4 py-4 space-y-3">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => scrollToSection(item.href)}
+                className="text-gray-300 hover:text-pink-500 block w-full text-left text-base font-medium"
+              >
+                {item.name}
+              </button>
+            ))}
+            <button
+              onClick={handleResumeDownload}
+              className="mt-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-4 py-2 rounded-lg font-semibold flex items-center justify-center gap-2 transition-transform duration-300 hover:scale-105 shadow-md hover:shadow-pink-500/25"
+            >
+              <Download size={18} />
+              Resume
+            </button>
           </div>
         )}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

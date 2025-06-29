@@ -311,3 +311,9 @@ textarea:focus {
     display: none;
   }
 }
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+}

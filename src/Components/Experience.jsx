@@ -3,36 +3,19 @@ import { Briefcase, Calendar, Star } from "lucide-react"
 const Experience = () => {
   const experiences = [
     {
-      title: "Full Stack Developer (MERN)",
-      company: "Freelance",
-      location: "Remote",
-      duration: "2021 - Present",
-      type: "Freelance",
-      description: [
-        "Developed 20+ full-stack web applications using MERN stack",
-        "Built responsive and interactive user interfaces with React.js",
-        "Designed and implemented RESTful APIs using Node.js and Express.js",
-        "Integrated MongoDB databases with proper schema design",
-        "Implemented user authentication and authorization systems",
-        "Deployed applications on Vercel, Netlify, and Firebase",
-      ],
-      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Firebase", "Tailwind CSS"],
-    },
-    {
       title: "WordPress Developer",
       company: "Fiverr Marketplace",
       location: "Remote",
-      duration: "2020 - Present",
+      duration: "2021 - Present",
       type: "Level 2 Seller",
       description: [
-        "Achieved Level 2 seller status on Fiverr with 100+ completed projects",
-        "Developed custom WordPress themes and plugins",
+        "Achieved Level 2 seller status on Fiverr with 200+ completed projects",
+        "Developed custom WordPress design",
         "Created responsive and SEO-optimized websites",
         "Integrated WooCommerce for e-commerce solutions",
-        "Provided ongoing maintenance and support services",
-        "Maintained 5-star rating with excellent client feedback",
+        "Maintained 4.9-star rating with excellent client feedback",
       ],
-      technologies: ["WordPress", "PHP", "MySQL", "HTML/CSS", "JavaScript", "WooCommerce"],
+      technologies: ["WordPress", "HTML", "CSS", "JavaScript", "WooCommerce"],
     },
     {
       title: "Web Development Trainee",
@@ -47,7 +30,7 @@ const Experience = () => {
         "Gained hands-on experience with client projects",
         "Received certification in web development",
       ],
-      technologies: ["HTML", "CSS", "JavaScript", "WordPress", "Basic PHP"],
+      technologies: ["HTML", "CSS", "JavaScript", "WordPress", "Hosting setup"],
     },
   ]
 
@@ -60,7 +43,7 @@ const Experience = () => {
           </h2>
           <div className="w-24 h-1 bg-pink-500 mx-auto mb-8"></div>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            6+ years of professional experience in web development and programming
+            1+ years of professional experience in web development and programming . Also 3+ years experience in Wordpress development.
           </p>
         </div>
 
@@ -132,15 +115,15 @@ const Experience = () => {
         {/* Summary Stats */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-3xl font-bold text-pink-500 mb-2">6+</h3>
+            <h3 className="text-3xl font-bold text-pink-500 mb-2">1+</h3>
             <p className="text-gray-300">Years of Experience</p>
           </div>
           <div className="text-center bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-3xl font-bold text-pink-500 mb-2">100+</h3>
+            <h3 className="text-3xl font-bold text-pink-500 mb-2">20+</h3>
             <p className="text-gray-300">Projects Completed</p>
           </div>
           <div className="text-center bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-3xl font-bold text-pink-500 mb-2">50+</h3>
+            <h3 className="text-3xl font-bold text-pink-500 mb-2">05+</h3>
             <p className="text-gray-300">Happy Clients</p>
           </div>
         </div>

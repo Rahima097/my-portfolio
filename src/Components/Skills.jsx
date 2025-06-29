@@ -1,6 +1,14 @@
-"use client"
-
 import { useState } from "react"
+import {
+  FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaGitAlt, FaFigma, FaWordpress, FaJs,
+  FaDatabase, FaFire, FaGithub, FaCode
+} from "react-icons/fa"
+import {
+  SiTailwindcss, SiExpress, SiMongodb, SiFirebase,
+  SiCanva, SiWoocommerce, SiReactrouter, SiDaisyui, SiNetlify, SiVercel, 
+} from "react-icons/si"
+import { BsFillLayersFill } from "react-icons/bs"
+import { MdDesignServices } from "react-icons/md"
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState("frontend")
@@ -19,7 +27,7 @@ const Skills = () => {
       { name: "Express.js", level: 88 },
       { name: "MongoDB", level: 82 },
       { name: "Firebase", level: 80 },
-      { name: "REST APIs", level: 85 },
+      { name: "Ract APIs", level: 85 },
       { name: "Authentication", level: 80 },
     ],
     tools: [
@@ -32,10 +40,38 @@ const Skills = () => {
     ],
     cms: [
       { name: "WordPress", level: 95 },
-      { name: "Custom Themes", level: 90 },
-      { name: "Plugin Development", level: 85 },
+      { name: "Theme Customization", level: 90 },
+      { name: "Custom Design", level: 85 },
       { name: "WooCommerce", level: 80 },
     ],
+  }
+
+  const skillIcons = {
+    "React.js": <FaReact size={20} className="text-white" />,
+    "JavaScript": <FaJs size={20} className="text-white" />,
+    "HTML5": <FaHtml5 size={20} className="text-white" />,
+    "CSS3": <FaCss3Alt size={20} className="text-white" />,
+    "Tailwind CSS": <SiTailwindcss size={20} className="text-white" />,
+    "React Router": <SiReactrouter size={20} className="text-white" />,
+
+    "Node.js": <FaNodeJs size={20} className="text-white" />,
+    "Express.js": <SiExpress size={20} className="text-white" />,
+    "MongoDB": <SiMongodb size={20} className="text-white" />,
+    "Firebase": <FaFire size={20} className="text-white" />,
+    "Ract APIs": <FaDatabase size={20} className="text-white" />,
+    "Authentication": <FaGithub size={20} className="text-white" />,
+
+    "VS Code": <FaCode size={20} className="text-white" />,
+    "Git & GitHub": <FaGitAlt size={20} className="text-white" />,
+    "Figma": <FaFigma size={20} className="text-white" />,
+    "Canva": <SiCanva size={20} className="text-white" />,
+    "Vercel": <SiVercel size={20} className="text-white" />,
+    "Netlify": <SiNetlify size={20} className="text-white" />,
+
+    "WordPress": <FaWordpress size={20} className="text-white" />,
+    "Theme Customization": <BsFillLayersFill size={20} className="text-white" />,
+    "Custom Design": <MdDesignServices size={20} className="text-white" />,
+    "WooCommerce": <SiWoocommerce size={20} className="text-white" />,
   }
 
   const categories = [
@@ -85,7 +121,12 @@ const Skills = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex justify-between items-center mb-3">
-                <h3 className="text-white font-semibold">{skill.name}</h3>
+                <h3 className="text-white font-semibold flex items-center gap-2">
+                  <div className="w-6 h-6 flex items-center justify-center">
+                    {skillIcons[skill.name]}
+                  </div>
+                  {skill.name}
+                </h3>
                 <span className="text-pink-500 font-bold">{skill.level}%</span>
               </div>
               <div className="w-full bg-gray-600 rounded-full h-3">
