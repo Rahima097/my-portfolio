@@ -52,7 +52,7 @@ const Footer = () => {
                   icon: Linkedin,
                   title: "LinkedIn"
                 }, {
-                  href: "mailto:rakhima.khatun.dev.com",
+                  href: "mailto:rakhima.khatun.dev@gmail.com",
                   icon: Mail,
                   title: "Email"
                 }, {
@@ -74,42 +74,14 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Quick Links */}
-            {/* <div>
-              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                {["About", "Skills", "Projects", "Contact"].map((item) => (
-                  <li key={item}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="text-gray-400 hover:text-pink-500 transition-colors"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div> */}
-
-            {/* Services */}
-            {/* <div>
-              <h4 className="text-white font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Full Stack Development</li>
-                <li>Frontend Development</li>
-                <li>MERN Stack Development</li>
-                <li>WordPress Development</li>
-              </ul>
-            </div> */}
-          </div>
-
-          {/* Bottom Section */}
-          <div className="border-t border-gray-700 mt-8 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm mb-4 md:mb-0">© {currentYear} Rakhima Khatun. All rights reserved.</p>
-              <p className="text-gray-400 text-sm flex items-center">
-                Made with <Heart size={16} className="text-pink-500 mx-1" /> and lots of ☕
-              </p>
+            {/* Bottom Section */}
+            <div className="border-t border-gray-700 mt-8 pt-8">
+              <div className="flex flex-col md:flex-row justify-between items-center">
+                <p className="text-gray-400 text-sm mb-4 md:mb-0">© {currentYear} Rakhima Khatun. All rights reserved.</p>
+                <p className="text-gray-400 text-sm flex items-center">
+                  Made with <Heart size={16} className="text-pink-500 mx-1" /> and lots of ☕
+                </p>
+              </div>
             </div>
           </div>
         </div>

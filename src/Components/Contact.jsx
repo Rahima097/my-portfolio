@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageSquare } from "lucide-react"
 
@@ -128,7 +126,7 @@ const Contact = () => {
                   <Linkedin size={20} />
                 </a>
                 <a
-                  href="mailto:rakhima.khatun@example.com"
+                  href="mailto:rakhima.khatun.dev@gmail.com"
                   className="bg-gray-800 hover:bg-pink-600 text-white p-3 rounded-full transition-all duration-300 transform hover:scale-110"
                 >
                   <Mail size={20} />

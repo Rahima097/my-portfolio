@@ -58,7 +58,7 @@ const About = () => {
                 <img
                   src={aboutImg || "/placeholder.svg"}
                   alt="Rakhima Khatun - Web Developer"
-                  className="w-full lg:max-w-lg lg:h-[600px] md:h-[550px] sm:h-[500px] h-[430px] lg:object-cover md:object-cover sm:object-cover pr-8  sm:pr-28 object-top rounded-lg lg:pr-18 transition-transform duration-500 group-hover:scale-105"
+                  className="w-full lg:max-w-lg lg:h-[600px] md:h-[550px] sm:h-[500px] h-[400px] lg:object-cover md:object-cover sm:object-cover pr-8  sm:pr-28 object-top rounded-lg lg:pr-18 transition-transform duration-500 group-hover:scale-105"
                 />
 
                 {/* Overlay Text at Bottom */}
