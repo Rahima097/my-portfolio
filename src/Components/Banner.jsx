@@ -141,7 +141,7 @@ const Banner = () => {
                 <img
                   src={bannerImg || "/placeholder.svg"}
                   alt="Rakhima Khatun"
-                  className="w-64 h-64 sm:w-72 sm:h-72  rounded-full object-cover"
+                  className="w-64 h-64 sm:w-72 sm:h-72 bg-gradient-to-r from-pink-500 to-purple-600  rounded-full object-cover"
                 />
               </div>
 
