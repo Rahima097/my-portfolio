@@ -52,7 +52,7 @@ const Footer = () => {
                   icon: Linkedin,
                   title: "LinkedIn"
                 }, {
-                  href: "mailto:rakhima.khatun.dev@gmail.com",
+                  href: "mailto:rahima.khatun.dev@gmail.com",
                   icon: Mail,
                   title: "Email"
                 }, {
