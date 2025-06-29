@@ -1,7 +1,8 @@
-"use client"
-
 import { useParams, Link } from "react-router-dom"
 import { ArrowLeft, ExternalLink, Github, Calendar, User, Code, Lightbulb, Target } from "lucide-react"
+import whereisitImg from "../assets/whereisit.png"
+import findroommateImg from "../assets/find-roommate.png"
+import plumbiofixImg from "../assets/plumbio-fix.png"
 
 const ProjectDetails = () => {
   const { id } = useParams()
@@ -9,112 +10,139 @@ const ProjectDetails = () => {
   // Mock project data - in a real app, this would come from an API or database
   const projectsData = {
     1: {
-      title: "E-Commerce MERN Application",
+      title: "WhereIsIt - Lost and Found Platform (MERN Application)",
       description:
-        "A comprehensive full-stack e-commerce platform built with the MERN stack, featuring user authentication, product management, shopping cart functionality, and secure payment processing.",
-      image: "/placeholder.svg?height=400&width=800",
-      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Stripe", "JWT", "Tailwind CSS", "Redux"],
-      liveLink: "https://ecommerce-demo.vercel.app",
-      githubLink: "https://github.com/rakhimakhatun/ecommerce-mern",
+        "A community-driven platform that helps users report, search, and recover lost or found items with an intuitive and responsive interface.",
+      image: whereisitImg,
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Firebase",
+        "JWT",
+        "Tailwind CSS",
+        "DaisyUI"
+      ],
+      liveLink: "https://whereisit-lost-and-found-item.netlify.app/",
+      githubLink: "https://github.com/Rahima097/where-is-it-client",
       category: "Full Stack",
-      duration: "3 months",
+      duration: "10 Days",
       role: "Full Stack Developer",
       challenges: [
-        "Implementing secure payment processing with Stripe integration",
-        "Managing complex state for shopping cart and user sessions",
-        "Optimizing database queries for product search and filtering",
-        "Ensuring responsive design across all device sizes",
-        "Implementing real-time inventory management",
+        "Implementing JWT-based protected routes with Firebase token verification",
+        "Handling secure user authentication with Google and email/password login",
+        "Managing CRUD operations with proper access control and error handling",
+        "Designing a fully responsive UI with dashboard and recovery management",
+        "Integrating animations and loading states for a better UX"
       ],
       improvements: [
-        "Add advanced search and filtering options",
-        "Implement product recommendations using machine learning",
-        "Add multi-vendor marketplace functionality",
-        "Integrate with multiple payment gateways",
-        "Add advanced analytics dashboard for sellers",
+        "Add item location tracking on a map (Google Maps API)",
+        "Enable in-app messaging between finder and owner",
+        "Add image upload support from local file instead of only URL",
+        "Implement admin panel for reported content moderation",
+        "Add support for multilingual UI"
       ],
       features: [
-        "User registration and authentication",
-        "Product catalog with search and filters",
-        "Shopping cart and wishlist functionality",
-        "Secure checkout with Stripe payment",
-        "Order tracking and history",
-        "Admin panel for product management",
-        "Responsive design for all devices",
-        "Email notifications for orders",
-      ],
+        "🔐 Authentication System",
+        "📝 Item Management",
+        "🔍 Search & Browse",
+        "🎯 Recovery System",
+        "🎨 User Experience",
+        "📊 Dashboard Features",
+        "🔧 JWT Security",
+        "🔧 email Security"
+      ]
     },
     2: {
-      title: "Task Management Dashboard",
+      title: "FindRoommate - Room Rental Platform",
       description:
-        "A collaborative task management application with real-time updates, team collaboration features, and comprehensive project tracking capabilities.",
-      image: "/placeholder.svg?height=400&width=800",
-      technologies: ["React.js", "Firebase", "Tailwind CSS", "React Router", "Context API", "React DnD"],
-      liveLink: "https://taskmanager-demo.vercel.app",
-      githubLink: "https://github.com/rakhimakhatun/task-manager",
-      category: "Frontend",
-      duration: "2 months",
-      role: "Frontend Developer",
-      challenges: [
-        "Implementing real-time updates with Firebase",
-        "Creating intuitive drag-and-drop functionality",
-        "Managing complex component state and data flow",
-        "Designing responsive layouts for different screen sizes",
-        "Optimizing performance for large datasets",
+        "A modern web application that helps users list and discover available room rentals. Features include secure authentication, interest-based contact reveal, and real-time listing management for a smoother roommate search experience.",
+      image: findroommateImg,
+      technologies: [
+        "React.js",
+        "Firebase",
+        "Tailwind CSS",
+        "MongoDB",
+        "Node.js",
+        "Express.js",
+        "React Router",
+        "Lottie React",
+        "SweetAlert2",
+        "Swiper.js"
       ],
-      improvements: [
-        "Add time tracking functionality",
-        "Implement advanced reporting and analytics",
-        "Add integration with calendar applications",
-        "Include file attachment capabilities",
-        "Add mobile app version using React Native",
-      ],
-      features: [
-        "Real-time task updates",
-        "Drag and drop task management",
-        "Team collaboration tools",
-        "Project progress tracking",
-        "Due date reminders",
-        "Task priority levels",
-        "User role management",
-        "Dark/light theme toggle",
-      ],
-    },
-    3: {
-      title: "Restaurant Website & Booking System",
-      description:
-        "Modern restaurant website with integrated online reservation system, dynamic menu management, and customer review functionality.",
-      image: "/placeholder.svg?height=400&width=800",
-      technologies: ["React.js", "Node.js", "MongoDB", "Express.js", "Socket.io", "Cloudinary"],
-      liveLink: "https://restaurant-demo.vercel.app",
-      githubLink: "https://github.com/rakhimakhatun/restaurant-booking",
+      liveLink: "https://find-roommate.netlify.app/",
+      githubLink: "https://github.com/Rahima097/find-roommate-client",
       category: "Full Stack",
-      duration: "2.5 months",
+      duration: "15 Days",
       role: "Full Stack Developer",
       challenges: [
-        "Implementing real-time table availability system",
-        "Managing complex booking logic and conflicts",
-        "Integrating image upload for menu items",
-        "Creating responsive design for mobile ordering",
-        "Implementing email notifications for bookings",
+        "Integrating Firebase authentication with email/password and Google OAuth",
+        "Managing protected routes and contact visibility logic",
+        "Ensuring users can’t like their own listings",
+        "Creating a responsive and animated UI",
+        "Handling secure MongoDB data operations"
       ],
       improvements: [
-        "Add online ordering and delivery system",
-        "Implement loyalty program features",
-        "Add integration with POS systems",
-        "Include social media integration",
-        "Add multi-language support",
+        "Add in-app messaging between interested users",
+        "Enable location-based search and filtering",
+        "Support image upload from device storage",
+        "Include a rating and review system for listings",
+        "Build an admin dashboard for listing moderation"
       ],
       features: [
-        "Online table reservation system",
-        "Dynamic menu management",
-        "Customer review system",
-        "Real-time availability updates",
-        "Email confirmation system",
-        "Admin dashboard for bookings",
-        "Mobile-responsive design",
-        "Image gallery for dishes",
+        "🔐 User Authentication with Firebase",
+        "📄 Post & Manage Room Listings",
+        "❤️ Interest & Like System",
+        "📱 Conditional Contact Reveal",
+        "🔁 Protected Routes for Posting",
+        "⚙️ Modern Tech Stack with Animations"
+      ]
+    },
+    3: {
+      title: "Plumbio Fix - Plumbing Service Website",
+      description:
+        "A modern plumbing service platform offering users a smooth way to explore services, subscribe to plans, read helpful plumbing tips, and request emergency or scheduled help.",
+      image: plumbiofixImg,
+      technologies: [
+        "React.js",
+        "Firebase",
+        "Tailwind CSS",
+        "DaisyUI",
+        "React Router",
+        "Swiper.js",
+        "React Helmet Async",
+        "React Toastify"
       ],
+      liveLink: "https://plumbio-fix.netlify.app/",
+      githubLink: "https://github.com/Rahima097/plumbio-fix",
+      category: "Frontend",
+      duration: "13 Days",
+      role: "Frontend Developer",
+      challenges: [
+        "Integrating Firebase authentication with email/password and Google login",
+        "Creating dynamic service sections using JSON data",
+        "Implementing private routes and secure access to profile and blog pages",
+        "Handling profile updates with hosted images",
+        "Creating a clean, responsive layout with interactive UI"
+      ],
+      improvements: [
+        "Add booking calendar for service scheduling",
+        "Enable real-time chat support for users",
+        "Implement multi-step subscription form",
+        "Add ratings and testimonials for services",
+        "Introduce admin panel for managing services and users"
+      ],
+      features: [
+        "✅ Firebase Email & Google Authentication",
+        "✅ Secure Private Routes",
+        "✅ Responsive Swiper Slider & FAQ Section",
+        "✅ Dynamic Subscription Services",
+        "✅ Service Details Page with Reviews",
+        "✅ Profile Update with Hosted Images",
+        "✅ Blog Page with Extra Protection",
+        "✅ Toast Notifications and Error Handling"
+      ]
     },
   }
 

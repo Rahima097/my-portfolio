@@ -177,6 +177,9 @@ const ProjectCard = ({ project, index }) => {
             >
               <Github size={18} /> GitHub Repo
             </a>
+            <Link to={`/project/${project.id}`} className="inline-flex items-center gap-2 border-2 border-pink-500 text-pink-500 hover:bg-gray-800 hover:border-white px-6 py-2 rounded-lg font-semibold transition-transform hover:scale-105">
+              <Eye size={20} /> View Details
+            </Link>
           </div>
         </div>
       </div>
