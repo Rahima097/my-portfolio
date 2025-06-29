@@ -116,7 +116,7 @@ const About = () => {
                     className="transform transition-all duration-500 hover:translate-x-2 animate-fade-in"
                     style={{ animationDelay: "0.6s" }}
                   >
-                    Over <span className="text-pink-500 font-semibold">6+ years</span> of experience, I've evolved from
+                    Over <span className="text-pink-500 font-semibold">3+ years</span> of experience, I've evolved from
                     WordPress development to mastering the MERN stack. I'm a Level 2 seller on Fiverr with{" "}
                     <span className="text-pink-500 font-semibold">200+ completed projects</span>, but my passion lies in
                     full-stack development.
