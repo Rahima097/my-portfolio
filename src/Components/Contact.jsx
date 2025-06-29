@@ -102,7 +102,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Location</h4>
-                  <p className="text-gray-400">Available for Remote Work</p>
+                  <p className="text-gray-400">Khalishpur, Khulna, Bangladesh</p>
                 </div>
               </div>
             </div>
