@@ -37,7 +37,7 @@ const Projects = () => {
       images: [findRoommateImg, findRoommateImg2, findRoommateImg3],
       technologies: ["React.js", "Firebase", "Tailwind CSS", "DaisyUI", "React Router", "Node.js", "Express.js", "MongoDB"],
       category: "Frontend",
-      liveLink: "https://find-roommate.netlify.app/contact",
+      liveLink: "https://find-roommate.netlify.app/",
       githubLink: "https://github.com/Rahima097/find-roommate-client",
     },
     {
