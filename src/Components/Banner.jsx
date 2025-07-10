@@ -9,11 +9,11 @@ const Banner = () => {
   const [typingSpeed, setTypingSpeed] = useState(150)
 
   const titles = [
-    "Full Stack Developer",
     "MERN Stack Developer",
+    "Frontend Developer",
     "Web Developer",
     "WordPress Expert",
-    "Frontend Developer",
+    "React.js Developer",
     "Node.js Developer",
   ]
 

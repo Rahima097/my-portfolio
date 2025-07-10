@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Mail, Phone, MapPin, Send, Github, Linkedin, MessageSquare } from "lucide-react"
+import Swal from "sweetalert2"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,12 +17,44 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    alert("Thank you for your message! I will get back to you soon.")
-    setFormData({ name: "", email: "", subject: "", message: "" })
+
+    try {
+      const response = await fetch("https://formspree.io/f/mdkzqkpp", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      if (response.ok) {
+        Swal.fire({
+          icon: "success",
+          title: "Message Sent!",
+          text: "Thank you for your message. I will get back to you soon!",
+          confirmButtonColor: "#ec4899", // Tailwind pink-500
+        })
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops!",
+          text: "Something went wrong. Please try again later.",
+          confirmButtonColor: "#ec4899",
+        })
+      }
+    } catch (error) {
+      console.error("Form error:", error)
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Could not send message. Please check your internet.",
+        confirmButtonColor: "#ec4899",
+      })
+    }
   }
 
   return (
@@ -71,7 +104,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="text-white font-semibold">Phone</h4>
-                  <a href="tel:+1234567890" className="text-gray-400 hover:text-pink-500 transition-colors">
+                  <a href="tel:+8801937049404" className="text-gray-400 hover:text-pink-500 transition-colors">
                     +8801937049404
                   </a>
                 </div>
@@ -84,7 +117,7 @@ const Contact = () => {
                 <div>
                   <h4 className="text-white font-semibold">WhatsApp</h4>
                   <a
-                    href="https://wa.me/1234567890"
+                    href="https://wa.me/8801937049404"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-pink-500 transition-colors"
@@ -219,4 +252,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Contact;

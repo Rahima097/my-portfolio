@@ -4,34 +4,18 @@ const Experience = () => {
   const experiences = [
     {
       title: "WordPress Developer",
-      company: "Fiverr Marketplace",
+      company: "MaanRishfa IT Solutions",
       location: "Remote",
-      duration: "2021 - Present",
-      type: "Level 2 Seller",
+      duration: "Nov 2023 - Dec 2024",
       description: [
-        "Achieved Level 2 seller status on Fiverr with 200+ completed projects",
-        "Developed custom WordPress design",
+        "Developed custom WordPress designs",
         "Created responsive and SEO-optimized websites",
         "Integrated WooCommerce for e-commerce solutions",
-        "Maintained 4.9-star rating with excellent client feedback",
+        "Expert in Elementor, Divi, WP-Bakery",
+        "Integrated Mailchimp, Google Sheets, Sendinblue, Maps, etc.",
       ],
       technologies: ["WordPress", "HTML", "CSS", "JavaScript", "WooCommerce"],
-    },
-    {
-      title: "Web Development Trainee",
-      company: "LEDP (Government Program)",
-      location: "Local Training Center",
-      duration: "2020 - 2021",
-      type: "Training",
-      description: [
-        "Completed intensive web development training program",
-        "Learned fundamentals of web development and WordPress",
-        "Built first portfolio of web projects",
-        "Gained hands-on experience with client projects",
-        "Received certification in web development",
-      ],
-      technologies: ["HTML", "CSS", "JavaScript", "WordPress", "Hosting setup"],
-    },
+    }
   ]
 
   return (
@@ -64,9 +48,6 @@ const Experience = () => {
                       <Calendar size={16} className="mr-2" />
                       {exp.duration}
                     </div>
-                    <span className="inline-block bg-pink-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {exp.type}
-                    </span>
                   </div>
                 </div>
 
@@ -78,12 +59,12 @@ const Experience = () => {
                       <h4 className="text-xl text-pink-500 font-semibold mb-2">{exp.company}</h4>
                       <p className="text-gray-400">{exp.location}</p>
                     </div>
-                    {exp.company === "Fiverr Marketplace" && (
+                    {/* {exp.company === "Fiverr Marketplace" && (
                       <div className="flex items-center mt-2 lg:mt-0">
                         <Star className="text-yellow-500 fill-current" size={20} />
                         <span className="text-white ml-2 font-semibold">Level 2 Seller</span>
                       </div>
-                    )}
+                    )} */}
                   </div>
 
                   <ul className="space-y-2 mb-6">
@@ -115,15 +96,15 @@ const Experience = () => {
         {/* Summary Stats */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-3xl font-bold text-pink-500 mb-2">1+</h3>
+            <h3 className="text-3xl font-bold text-pink-500 mb-2">3+</h3>
             <p className="text-gray-300">Years of Experience</p>
           </div>
           <div className="text-center bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-3xl font-bold text-pink-500 mb-2">20+</h3>
+            <h3 className="text-3xl font-bold text-pink-500 mb-2">220+</h3>
             <p className="text-gray-300">Projects Completed</p>
           </div>
           <div className="text-center bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-3xl font-bold text-pink-500 mb-2">05+</h3>
+            <h3 className="text-3xl font-bold text-pink-500 mb-2">150+</h3>
             <p className="text-gray-300">Happy Clients</p>
           </div>
         </div>

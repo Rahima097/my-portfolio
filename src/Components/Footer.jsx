@@ -26,10 +26,10 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-gray-800 border-t border-gray-700 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col items-center justify-center gap-8">
+        <div className=" w-11/12 mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="w-full flex flex-col items-center justify-center gap-8">
             {/* Brand Section */}
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col max-w-7xl items-center justify-center">
               <Link to="/" className="text-2xl font-bold text-white flex items-center gap-2">
                 <img
                   src={logo || "/placeholder.svg"}
@@ -75,9 +75,9 @@ const Footer = () => {
             </div>
 
             {/* Bottom Section */}
-            <div className="border-t border-gray-700 mt-8 pt-8">
+            <div className="w-full border-t border-gray-700 mt-8 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center">
-                <p className="text-gray-400 text-sm mb-4 md:mb-0">© {currentYear} Rakhima Khatun. All rights reserved.</p>
+                <p className="text-gray-400 text-center text-sm mb-4 md:mb-0">© {currentYear} Rakhima Khatun. All rights reserved.</p>
                 <p className="text-gray-400 text-sm flex items-center">
                   Made with <Heart size={16} className="text-pink-500 mx-1" /> and lots of ☕
                 </p>
