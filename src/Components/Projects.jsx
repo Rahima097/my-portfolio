@@ -15,22 +15,36 @@ import whereIsItImg3 from "../assets/whereisit3.png";
 import plumbiofixImg from "../assets/plumbio-fix.png";
 import plumbiofixImg2 from "../assets/plumbio-fix2.png";
 import plumbiofixImg3 from "../assets/plumbio-fix3.png";
+import MedixCampImg from "../assets/medix-camp.png";
+import MedixCampImg2 from "../assets/medix-camp2.png";
+import MedixCampImg3 from "../assets/medix-camp3.png";
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "WhereIsIt Lost and Found Item (MERN Application)",
+      title: "Medix Camp (Medical Camp Management System - MERN Application)",
+      description:
+        "A full-stack platform for managing medical camps, including camp registration, participant dashboards, organizer management, Stripe payments, and real-time analytics.",
+      images: [MedixCampImg, MedixCampImg2, MedixCampImg3],
+      technologies: ["Tailwind CSS", "Material Tailwind", "DaisyUI", "React.js", "Node.js", "Express.js", "MongoDB", "Firebase auth", "TanStack Query", "Stripe"],
+      category: "Full Stack",
+      liveLink: "https://medix-camp.netlify.app/",
+      githubLink: "https://github.com/Rahima097/medix-camp-client",
+    },
+    {
+      id: 2,
+      title: "WhereIsItHub Lost and Found Item (MERN Application)",
       description:
         "A community-driven platform for reporting, searching, and recovering lost or found items.",
       images: [whereIsItImg, whereIsItImg2, whereIsItImg3],
       technologies: ["Tailwind CSS", "DaisyUI", "React.js", "Node.js", "Express.js", "MongoDB", "Firebase auth"],
       category: "Full Stack",
-      liveLink: "https://whereisit-lost-and-found-item.netlify.app/",
+      liveLink: "https://whereisit-hub.netlify.app/",
       githubLink: "https://github.com/Rahima097/where-is-it-client",
     },
     {
-      id: 2,
+      id: 3,
       title: "Find Roommate (MERN Application)",
       description:
         "A web app to help users list and find available room rentals with secure auth and modern UI.",
@@ -41,7 +55,7 @@ const Projects = () => {
       githubLink: "https://github.com/Rahima097/find-roommate-client",
     },
     {
-      id: 3,
+      id: 4,
       title: "Plumbio Fix (Plumbing service box)",
       description:
         "A plumbing service website with subscription booking, service listings, and plumbing tips.",
@@ -117,7 +131,7 @@ const ProjectCard = ({ project, index }) => {
           >
             {project.images.map((img, i) => (
               <SwiperSlide key={i}>
-                <img src={img} alt={`Slide ${i}`} className="w-full h-full object-cover" />
+                <img src={img} alt={`Slide ${i}`} className="w-full  object-cover" />
               </SwiperSlide>
             ))}
           </Swiper>
