@@ -23,9 +23,9 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Medix Camp (Medical Camp Management System - MERN Application)",
+      title: "Medix Camp (Medical Camp Management System)",
       description:
-        "A full-stack platform for managing medical camps, including camp registration, participant dashboards, organizer management, Stripe payments, and real-time analytics.",
+        "A full-stack platform for managing medical camps, including camp registration, participant and organizer dashboards, Stripe pay, and analytics.",
       images: [MedixCampImg, MedixCampImg2, MedixCampImg3],
       technologies: ["Tailwind CSS", "Material Tailwind", "DaisyUI", "React.js", "Node.js", "Express.js", "MongoDB", "Firebase auth", "TanStack Query", "Stripe"],
       category: "Full Stack",
@@ -117,7 +117,7 @@ const ProjectCard = ({ project, index }) => {
     <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl hover:shadow-pink-500/10 transition-all duration-300">
       <div className={`flex flex-col lg:grid lg:grid-cols-2 ${!isEven ? "lg:flex-row-reverse" : ""}`}>
         {/* Image Slider */}
-        <div className="relative w-full h-64 sm:h-96">
+        <div className="relative w-full  ">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             navigation
@@ -127,7 +127,7 @@ const ProjectCard = ({ project, index }) => {
               disableOnInteraction: false,
             }}
             loop={true}
-            className="w-full h-full"
+            className="w-full "
           >
             {project.images.map((img, i) => (
               <SwiperSlide key={i}>
@@ -156,11 +156,11 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Content */}
-        <div className="p-6 md:p-8 flex flex-col justify-center">
+        <div className="px-6 py-2 flex flex-col justify-center">
           <div className="mb-2">
             <span className="text-pink-500 text-sm font-semibold uppercase tracking-wide">{project.category}</span>
           </div>
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-3">{project.title}</h3>
+          <h3 className="text-xl md:text-xl font-bold text-white mb-3">{project.title}</h3>
           <p className="text-gray-400 mb-4 leading-relaxed">{project.description}</p>
 
           <div className="flex flex-wrap gap-2 mb-6">

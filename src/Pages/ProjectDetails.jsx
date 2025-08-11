@@ -3,6 +3,7 @@ import { ArrowLeft, ExternalLink, Github, Calendar, User, Code, Lightbulb, Targe
 import whereisitImg from "../assets/whereisit.png"
 import findroommateImg from "../assets/find-roommate.png"
 import plumbiofixImg from "../assets/plumbio-fix.png"
+import medixCampImg from "../assets/medix-camp.png"
 
 const ProjectDetails = () => {
   const { id } = useParams()
@@ -10,6 +11,50 @@ const ProjectDetails = () => {
   // Mock project data - in a real app, this would come from an API or database
   const projectsData = {
     1: {
+      title: "Medix Camp - Online Medical Camp Booking Platform",
+      description:
+        "A digital platform that allows users to find, book, and manage appointments for medical camps, with features for both patients and healthcare providers.",
+      image: medixCampImg,
+      technologies: [
+        "React.js",
+        "Axios",
+        "Express.js",
+        "MongoDB",
+        "Firebase",
+        "JWT",
+        "Tailwind CSS",
+        "Metarial Tailwind"
+      ],
+      liveLink: "https://medix-camp.netlify.app/",
+      githubLink: "https://github.com/Rahima097/medix-camp-client",
+      category: "Full Stack",
+      duration: "12 Days",
+      role: "Full Stack Developer",
+      challenges: [
+        "Implementing JWT-based authentication for patient and doctor roles",
+        "Designing role-based dashboards for healthcare providers and users",
+        "Managing appointment scheduling with proper validation and conflict checks",
+        "Creating a responsive UI optimized for mobile users",
+        "Ensuring secure data handling for patient health information"
+      ],
+      improvements: [
+        "Integrate payment gateway for booking fees",
+        "Add reminders for upcoming appointments",
+        "Implement advanced filtering for camps by location, date, and specialization",
+        "Add support for health issues"
+      ],
+      features: [
+        "🔐 Role-based Authentication",
+        "📅 Camp Booking System",
+        "📋 Appointment Management",
+        "🩺 Organizer & Patient Dashboards",
+        "🎨 Responsive UI",
+        "📊 Analytics for Camp Organizers",
+        "🔒 Data Security",
+        "📧 Email Notifications"
+      ]
+    },
+    2: {
       title: "WhereIsIt - Lost and Found Platform (MERN Application)",
       description:
         "A community-driven platform that helps users report, search, and recover lost or found items with an intuitive and responsive interface.",
@@ -54,7 +99,7 @@ const ProjectDetails = () => {
         "🔧 email Security"
       ]
     },
-    2: {
+    3: {
       title: "FindRoommate - Room Rental Platform",
       description:
         "A modern web application that helps users list and discover available room rentals. Features include secure authentication, interest-based contact reveal, and real-time listing management for a smoother roommate search experience.",
@@ -99,7 +144,7 @@ const ProjectDetails = () => {
         "⚙️ Modern Tech Stack with Animations"
       ]
     },
-    3: {
+    4: {
       title: "Plumbio Fix - Plumbing Service Website",
       description:
         "A modern plumbing service platform offering users a smooth way to explore services, subscribe to plans, read helpful plumbing tips, and request emergency or scheduled help.",

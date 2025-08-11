@@ -128,11 +128,17 @@ const About = () => {
                     and problem-solving give me an incredible rush. I chose tech over my physics background because
                     coding brings me joy and fulfillment.
                   </p>
+                  <p
+                    className="transform transition-all duration-500 hover:translate-x-2 animate-fade-in"
+                    style={{ animationDelay: "0.9s" }}
+                  >
+                    My Hobbies including learning new technologies, traveling, and exploring innovative ideas.
+                  </p>
                 </div>
               </div>
 
               {/* Tech Stack Icons */}
-              <div className="mt-8 animate-slide-up" style={{ animationDelay: "1s" }}>
+              <div className="mt-4 animate-slide-up" style={{ animationDelay: "1s" }}>
                 <h4 className="text-xl font-semibold text-white mb-4">Technologies I Love</h4>
                 <div className="flex flex-wrap gap-4">
                   {techStack.slice(0, 6).map((tech, index) => (
@@ -153,7 +159,7 @@ const About = () => {
               </div>
 
               {/* Call to Action */}
-              <div className="mt-12 animate-fade-in" style={{ animationDelay: "2.4s" }}>
+              <div className="mt-6 animate-fade-in" style={{ animationDelay: "2.4s" }}>
                 <a
                   href="#contact"
                   className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 gap-2 shadow-lg hover:shadow-pink-500/25"

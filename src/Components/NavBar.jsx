@@ -63,16 +63,16 @@ const Navbar = () => {
               alt="Rakhima Logo"
               className="w-10 h-10 object-contain"
             />
-            <span className="text-pink-500">Rakhima</span> Khatun
+            <span className="text-pink-500 ">Rakhima</span> Khatun
           </Link>
 
-          {/* Desktop & Tablet Menu (≥768px) */}
-          <div className="hidden sm:flex space-x-4 md:space-x-6 items-center">
+          {/* Desktop Menu (≥1024px) */}
+          <div className="hidden lg:flex space-x-4 md:space-x-6 items-center">
             {navItems.map((item) => (
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-pink-500 transition-colors duration-200 text-sm md:text-base font-medium"
+                className="text-gray-300 hover:text-pink-500 transition-colors duration-200 text-sm sm:text-sm md:text-base font-medium"
               >
                 {item.name}
               </button>
@@ -87,8 +87,8 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle (only <768px) */}
-          <div className="sm:hidden">
+          {/* Mobile & Tablet Menu Toggle (<1024px) */}
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-gray-300 hover:text-white p-2"
@@ -99,9 +99,9 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile & Tablet Menu */}
         {isOpen && (
-          <div className="sm:hidden transition-all duration-300 ease-in-out bg-gray-800 rounded-lg mt-2 px-4 py-4 space-y-3">
+          <div className="lg:hidden transition-all duration-300 ease-in-out bg-gray-800 rounded-lg mt-2 px-4 py-4 space-y-3">
             {navItems.map((item) => (
               <button
                 key={item.name}
