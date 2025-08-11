@@ -115,7 +115,7 @@ const ProjectCard = ({ project, index }) => {
 
   return (
     <div className="bg-gray-900 rounded-lg overflow-hidden shadow-2xl hover:shadow-pink-500/10 transition-all duration-300">
-      <div className={`flex flex-col lg:grid lg:grid-cols-2 ${!isEven ? "lg:flex-row-reverse" : ""}`}>
+      <div className={`flex flex-col lg:p-4  lg:grid lg:grid-cols-2 ${!isEven ? "lg:flex-row-reverse" : ""}`}>
         {/* Image Slider */}
         <div className="relative w-full  ">
           <Swiper
@@ -156,7 +156,7 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Content */}
-        <div className="px-6 py-2 flex flex-col justify-center">
+        <div className="px-6 py-4 lg:py-1 flex flex-col justify-center">
           <div className="mb-2">
             <span className="text-pink-500 text-sm font-semibold uppercase tracking-wide">{project.category}</span>
           </div>
