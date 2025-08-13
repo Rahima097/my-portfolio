@@ -63,7 +63,7 @@ const Navbar = () => {
               alt="Rakhima Logo"
               className="w-10 h-10 object-contain"
             />
-            <span className="text-pink-500 ">Rakhima</span> Khatun
+            <span className="text-pink-500 ">Rahima</span> Khatun
           </Link>
 
           {/* Desktop Menu (≥1024px) */}
